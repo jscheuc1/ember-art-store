@@ -7,6 +7,6 @@ export default DS.Model.extend({
   medium: DS.attr('string'),
   size: DS.attr('string'),
   price: DS.attr('number'),
-  artist: DS.belongsTo('artist'),
-  exhibition: DS.belongsTo('exhibition')
+  artist: DS.belongsTo('artist', { async: true}),
+  exhibition: DS.belongsTo('exhibition', { async: true})
 });
