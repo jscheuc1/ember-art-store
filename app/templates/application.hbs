@@ -1,3 +1,20 @@
-<h2 id="title">Welcome to Art Store</h2>
-
-{{outlet}}
+  <body>
+    <nav class="navbar navbar-default">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         {{#link-to "index" class="navbar-brand"}}Art Store{{/link-to}}
+       </div>
+       <ul class="nav navbar-nav">
+         <li>{{#link-to "pieces"}}Pieces{{/link-to}}</li>
+         <li>{{#link-to "artists"}}Artists{{/link-to}}</li>
+         <li>{{#link-to "exhibitions"}}Exhibitions{{/link-to}}</li>
+       </ul>
+     </div>
+    </nav>
+    {{outlet}}
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+  </body>
