@@ -1,4 +1,18 @@
 <div class="container">
-  {{model.length}}
-  {{outlet}}
+  <ul>
+    {{#each model as |artist|}}
+    <li>
+      <strong>{{artist.name}}</strong><p>
+        {{artist.location}}</p>
+      <em>biography</em><p>
+      {{artist.bio}}</p>
+      {{#each artist.pieces as |piece|}}
+          {{piece.title}}
+      {{/each}}
+      {{#each artist.exhibitions as |x|}}
+          {{x.location}}
+      {{/each}}
+      </li>
+    {{/each}}
+  </ul>
 </div>

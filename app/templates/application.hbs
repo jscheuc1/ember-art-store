@@ -1,8 +1,9 @@
   <body>
+    <div id="wrapper">
     <nav class="navbar navbar-default">
      <div class="container-fluid">
        <div class="navbar-header">
-         {{#link-to "index" class="navbar-brand"}}Art Store{{/link-to}}
+         {{#link-to "index" class="navbar-brand"}}Aesthete{{/link-to}}
        </div>
        <ul class="nav navbar-nav">
          <li>{{#link-to "pieces"}}Pieces{{/link-to}}</li>
@@ -11,10 +12,15 @@
        </ul>
      </div>
     </nav>
-    {{outlet}}
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
-    </footer>
+    <div id="content">
+      {{outlet}}
+    </div>
+    <div id="footer">
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">Created by Johnny Scheuch and Ethan Steiner.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
   </body>
