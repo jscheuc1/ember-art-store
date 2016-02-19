@@ -1,4 +1,16 @@
 <div class="container">
-  {{model.length}}
-  {{outlet}}
+  <ul>
+    {{#each model as |piece|}}
+    <li>
+      <strong>{{piece.title}}</strong><p>
+        {{piece.style}}</p>
+        <p>{{piece.subject}}</p>
+        <p>{{piece.medium}}</p>
+        <p><em>Size:</em>{{piece.size}}</p>
+        <p><em>Price: </em>${{piece.price}}</p>
+      <ul>{{piece.artist.name}}</ul>
+      <ul>{{piece.exhibitions.location}}</ul>
+      </li>
+    {{/each}}
+  </ul>
 </div>

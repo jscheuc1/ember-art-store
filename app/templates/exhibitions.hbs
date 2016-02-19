@@ -1,4 +1,12 @@
 <div class="container">
-  {{model.length}}
-  {{outlet}}
+  <ul>
+    {{#each model as |exhibition|}}
+    <li>
+      <strong>{{exhibition.location}}</strong>
+        {{#each exhibition.pieces as |x|}}
+          {{x.title}}
+        {{/each}}
+      </li>
+    {{/each}}
+  </ul>
 </div>
