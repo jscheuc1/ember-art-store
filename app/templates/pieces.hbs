@@ -1,15 +1,15 @@
 <div class="container">
   <ul>
     {{#each model as |piece|}}
-    <li>
-      <strong>{{piece.title}}</strong>
-        <p><em>Style: </em>{{piece.style}}</p>
-        <p><em>Subject: </em>{{piece.subject}}</p>
-        <p><em>Medium: </em>{{piece.medium}}</p>
-        <p><em>Size:</em>{{piece.size}}</p>
-        <p><em>Price: </em>${{piece.price}}</p>
-        <p><em>By: </em>{{piece.artist.name}}</p>
-        <p><em>Current Exhibition: </em>{{piece.exhibition.location}}</p>
+      <li>
+        <strong>{{piece.title}}</strong>
+          <p><em>Style: </em>{{piece.style}}</p>
+          <p><em>Subject: </em>{{piece.subject}}</p>
+          <p><em>Medium: </em>{{piece.medium}}</p>
+          <p><em>Size:</em>{{piece.size}}</p>
+          <p><em>Price: </em>${{piece.price}}</p>
+          <p><em>By: </em>{{piece.artist.name}}</p>
+          <p><em>Current Exhibition: </em>{{piece.exhibition.location}}</p>
       </li>
     {{/each}}
   </ul>
