@@ -2,15 +2,15 @@
   <ul>
     {{#each model as |artist|}}
     <li>
-      <strong>{{artist.name}}</strong><p>
-        {{artist.location}}</p>
-      <em>biography</em><p>
-      {{artist.bio}}</p>
+      <strong>{{artist.name}}</strong>
+        <p>{{artist.location}}</p>
+      <em>Biography</em>
+        <p>{{artist.bio}}</p>
       {{#each artist.pieces as |piece|}}
-          {{piece.title}}
+        <p>{{piece.title}}</p>
       {{/each}}
-      {{#each artist.exhibitions as |x|}}
-          {{x.location}}
+      {{#each artist.exhibitions as |exhibition|}}
+        <p>{{exhibition.location}}</p>
       {{/each}}
       </li>
     {{/each}}

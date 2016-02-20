@@ -3,10 +3,13 @@
     {{#each model as |exhibition|}}
     <li>
       <strong>{{exhibition.location}}</strong>
-        {{#each exhibition.pieces as |x|}}
-          {{x.title}}
+        {{#each exhibition.pieces as |exhibition|}}
+          {{exhibition.title}}
         {{/each}}
       </li>
     {{/each}}
   </ul>
 </div>
+{{manage-exhibition
+ exhibition=model
+ onSubmit="createExhibition"}}
