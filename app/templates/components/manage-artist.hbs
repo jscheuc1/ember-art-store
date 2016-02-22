@@ -1,0 +1,34 @@
+<form class="form-vertical">
+  <div class="form-group">
+    <label for="artist-name">Name</label>
+    {{input value=artist.name class="form-control" id="artist-name" placeholder="Enter Artist Name"}}
+  </div>
+  <div class="form-group">
+    <label for="artist-location">Location</label>
+    {{input value=artist.location class="form-control" id="artist-location" placeholder="Enter Artist Location"}}
+  </div>
+  <div class="form-group">
+    <label for="artist-bio">Instructions</label>
+    {{input value=artist.bio class="form-control" id="artist-bio" placeholder="Enter Artist Bio"}}
+  </div>
+  <div class="form-group">
+    <label for="artist-asset">Image</label>
+    {{input value=artist.asset class="form-control" id="artist-asset"}}
+  </div>
+  <button type="button" {{action "attachPiece"}}>Add Piece</button>
+  {{artist.pieces.length}}
+
+  {{#if showAddPieceForm}}
+      <div class="form-group">
+        {{input value=title class="form-control" placeholder="title"}}
+        {{input value=style class="form-control" placeholder="style"}}
+        {{input value=subject class="form-control" placeholder="subject"}}
+        {{input value=medium class="form-control" placeholder="medium"}}
+        {{input value=size class="form-control" placeholder="size in inches"}}
+        {{input value=price class="form-control" placeholder="price in USD"}}
+        <!-- {{input value=piece.asset class="form-control"}}upload image -->
+      </div>
+  {{/if}}
+
+  <button type="submit" class="btn btn-default" {{action "submit"}}>Submit</button>
+</form>

@@ -1,0 +1,19 @@
+<h2>{{model.name}}</h2>
+<blockquote class='blockquote-reverse'>
+  <p>{{model.bio}}</p>
+   <footer>{{model.location}}</footer>
+</blockquote>
+<ul>
+{{#each model.pieces as |piece|}}
+  <li><strong>{{piece.title}}</strong> {{piece.size}}</li>
+  <li>{{piece.style}}</li>
+  <li>{{piece.subject}}</li>
+  <li>{{piece.medium}}</li>
+  <li>{{piece.size}}</li>
+  <li>{{piece.price}}</li>
+{{/each}}
+</ul>
+
+{{manage-artist artist=model action="updateArtist" onNewPiece="addPiece"}}
+
+<!-- onNewPiece="newPiece" -->
