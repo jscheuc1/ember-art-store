@@ -1,18 +1,29 @@
-<div class="container">
-  <ul>
-    {{#each model as |artist|}}
-    <li>
-      <strong>{{artist.name}}</strong><p>
-        {{artist.location}}</p>
-      <em>biography</em><p>
-      {{artist.bio}}</p>
-      {{#each artist.pieces as |piece|}}
-          {{piece.title}}
+<div class="row">
+  <div class="col-xs-3">
+    <ul>
+      {{#each model as |artist|}}
+      <li>
+        <strong>{{link-to artist.name "artists.artist" artist}}</strong><p>
+          {{artist.location}}</p>
+        <em>biography</em><p>
+        {{artist.bio}}</p>
+        {{#each artist.pieces as |piece|}}
+            {{link-to piece.title "pieces.piece" piece}}
+        {{/each}}
+        {{#each artist.exhibitions as |exhibition|}}
+            {{link-to exhibition.location "exhibitions.exhibition" exhibition}}
+        {{/each}}
+        </li>
       {{/each}}
-      {{#each artist.exhibitions as |x|}}
-          {{x.location}}
-      {{/each}}
-      </li>
-    {{/each}}
-  </ul>
+    </ul>
+  </div>
+  <div class="col-xs-9">
+    {{#if canShowAddArtist}}
+      {{input value=newArtist enter="addArtist"}}
+        <a href="#" {{action "hideAddArtist"}}>Hide Form</a>
+      {{else}}
+        <a href="#" {{action "showAddArtist"}}>Show Form</a>
+      {{/if}}
+    {{outlet}}
+  </div>
 </div>
