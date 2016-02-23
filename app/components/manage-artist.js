@@ -8,8 +8,7 @@ export default Ember.Component.extend({
     submit(){
 
       let artist = this.artist;
-      let newPiece = {title: this.title, style: this.style, subject: this.subject, medium: this.medium,
-        size: this.size, price: this.price};
+      let newPiece = {title: this.title, style: this.style, subject: this.subject, medium: this.medium, size: this.size, price: this.price};
       this.sendAction('action', artist, newPiece);
 
     }

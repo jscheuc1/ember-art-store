@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   actions: {
-    addArtist(){
+    updateArtist(){
       let artist = this.modelFor(this.routeName);
       artist.save().then((savedArtist) => {
         savedArtist.get('pieces').invoke('save');

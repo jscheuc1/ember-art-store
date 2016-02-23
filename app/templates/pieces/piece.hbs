@@ -1,1 +1,18 @@
-{{outlet}}
+<blockquote class='blockquote-reverse'>
+  <li><strong>{{model.title}}</strong></li>
+  <li>{{model.size}}</li>
+  <li>{{model.style}}</li>
+  <li>{{model.subject}}</li>
+  <li>{{model.medium}}</li>
+  <li>{{model.size}}</li>
+  <li>{{model.price}}</li>
+</blockquote>
+<ul>
+{{#each model.artists as |artist|}}
+  <li><strong>{{artist.name}}</strong></li>
+  <li>{{artist.location}}</li>
+  <li>{{artist.bio}}</li>
+{{/each}}
+</ul>
+
+{{manage-piece piece=model action="updatePiece" onNewArtist="addArtist"}}
