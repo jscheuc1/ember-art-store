@@ -6,9 +6,7 @@ export default Ember.Controller.extend({
       let artist = this.store.createRecord('artist', newArtist);
       artist.set('piece', piece);
       piece.save().then(()=>{
-
         artist.save().then(()=>{
-
           this.transitionToRoute('pieces');
         });
       });
