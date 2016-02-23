@@ -1,16 +1,43 @@
-<div class="container">
-  <ul>
-    {{#each model as |piece|}}
-      <li>
-        <strong>{{piece.title}}</strong>
-          <p><em>Style: </em>{{piece.style}}</p>
-          <p><em>Subject: </em>{{piece.subject}}</p>
-          <p><em>Medium: </em>{{piece.medium}}</p>
-          <p><em>Size:</em>{{piece.size}}</p>
-          <p><em>Price: </em>${{piece.price}}</p>
-          <p><em>By: </em>{{piece.artist.name}}</p>
-          <p><em>Current Exhibition: </em>{{piece.exhibition.location}}</p>
-      </li>
-    {{/each}}
-  </ul>
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      {{#each model as |piece|}}
+      <div class="col-md-4">
+
+        <li>
+          <strong>{{link-to piece.title "pieces.piece" piece}} by {{link-to piece.artist "piece.artist" artist}}</strong>
+            <p>{{piece.style}}</p>
+            <p>{{piece.subject}}</p>
+            <p>{{piece.medium}}</p>
+            <p>{{piece.size}}</p>
+            <p>{{piece.price}}</p>
+            <em>Exhibitions</em>
+              {{#each piece.exhibitions as |exhibition|}}
+              {{link-to exhibition.location "exhibitions.exhibition" exhibition}}
+              {{/each}}
+            </li>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-6" style="clear: both;">
+    <div class="container-fluid">
+      <h3>{{link-to "Add Piece" "pieces.new"}}</h3>
+      {{outlet}}
+    <!-- {{#if canShowAddArtist}}
+    <form {{action "addArtist" on="submit"}}>
+      <h2>Create New Artist</h2>
+    <ul>
+      <li>Name:     {{input value=newArtistName}}</li><br>
+      <li>Location: {{input value=newArtistLocation enter="addArtistLocation"}}</li><br>
+      <li>Bio:      {{textarea value=newArtistBio enter="addArtistBio" cols="45" rows="5"}}</li><br>
+    </ul>
+    <button class="btn btn-primary btn-block" type="submit">Save</button>
+  </form>
+        <a href="#" {{action "hideAddArtist"}}>Hide Form</a>
+      {{else}}
+        <a href="#" {{action "showAddArtist"}}>Click here add an piece</a>
+      {{/if}} -->
+    </div>
+  </div>
 </div>
