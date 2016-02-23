@@ -2,14 +2,19 @@
   <ul>
     {{#each model as |exhibition|}}
     <li>
+      <strong>{{exhibition.title}}</strong>
       <strong>{{exhibition.location}}</strong>
-        {{#each exhibition.pieces as |exhibition|}}
-          {{exhibition.title}}
+        {{#each exhibition.pieces as |piece|}}
+          {{link-to piece.title "pieces.piece" piece}}
         {{/each}}
       </li>
     {{/each}}
   </ul>
 </div>
-{{manage-exhibition
- exhibition=model
- onSubmit="createExhibition"}}
+
+ <div class="col-md-6" style="clear: both;">
+   <div class="container-fluid">
+     <h3>{{link-to "Add Exhibition" "exhibitions.new"}}</h3>
+     {{outlet}}
+   </div>
+ </div>
