@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 
         piece.save().then(()=>{
 
-          this.transitionToRoute('pieces');
+          this.transitionToRoute('artists');
         });
       });
     }
