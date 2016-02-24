@@ -1,43 +1,16 @@
+<div class="container">
 <div class="row">
-  <div class="col-md-6">
-    <ul>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">Artists</div>
       {{#each model as |artist|}}
-      <div class="col-md-4">
-
-        <li>
-          <strong>{{link-to artist.name "artists.artist" artist}}</strong><p>
-            {{artist.location}}</p>
-            <em>biography</em><p>
-              {{artist.bio}}</p>
-              {{#each artist.pieces as |piece|}}
-              {{link-to piece.title "pieces.piece" piece}}
-              {{/each}}
-              {{#each artist.exhibitions as |exhibition|}}
-              {{link-to exhibition.location "exhibitions.exhibition" exhibition}}
-              {{/each}}
-            </li>
+      <div class="panel-body">
+        {{link-to artist.name "artists.artist" artist}}
       </div>
       {{/each}}
-    </ul>
-  </div>
-  <div class="col-md-6" style="clear: both;">
-    <div class="container-fluid">
-      <h3>{{link-to "Add Artist" "artists.new"}}</h3>
-      {{outlet}}
-    <!-- {{#if canShowAddArtist}}
-    <form {{action "addArtist" on="submit"}}>
-      <h2>Create New Artist</h2>
-    <ul>
-      <li>Name:     {{input value=newArtistName}}</li><br>
-      <li>Location: {{input value=newArtistLocation enter="addArtistLocation"}}</li><br>
-      <li>Bio:      {{textarea value=newArtistBio enter="addArtistBio" cols="45" rows="5"}}</li><br>
-    </ul>
-    <button class="btn btn-primary btn-block" type="submit">Save</button>
-  </form>
-        <a href="#" {{action "hideAddArtist"}}>Hide Form</a>
-      {{else}}
-        <a href="#" {{action "showAddArtist"}}>Click here add an artist</a>
-      {{/if}} -->
+
     </div>
   </div>
+</div>
+{{artist-show artist=model}}
 </div>

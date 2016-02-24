@@ -23,6 +23,7 @@
     <label for="piece-price">Price</label>
     {{input value=piece.price class="form-control" id="piece-price" placeholder="Enter Piece Price"}}
   </div>
+  <p>{{input value=piece.asset type='file' id='file-field'}}</p>
   <button type="button" {{action "attachArtist"}}>Add Artist</button>
 
   {{#if showAddArtistForm}}
