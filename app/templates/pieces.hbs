@@ -11,7 +11,10 @@
             <p>{{piece.medium}}</p>
             <p>{{piece.size}}</p>
             <p>{{piece.price}}</p>
-            <p>{{piece.asset}}</p>
+
+
+            <p><img src="{{piece.assetUrl}}" alt="" /> </p>
+
             <em>Exhibitions</em>
               {{#each piece.exhibitions as |exhibition|}}
                 {{link-to exhibition.location "exhibitions.exhibition" exhibition}}
