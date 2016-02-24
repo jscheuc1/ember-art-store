@@ -9,7 +9,7 @@ export default Ember.Route.extend({
       let artist = this.modelFor(this.routeName);
       artist.save().then((savedArtist) => {
         savedArtist.get('pieces').invoke('save');
-      this.transitionTo('artists.artist', savedArtist);
+        this.transitionTo('artists.artist', savedArtist);
       });
     }
   }

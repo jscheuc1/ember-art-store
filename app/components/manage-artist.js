@@ -16,12 +16,11 @@ export default Ember.Component.extend({
         price: this.get('price'),
         asset: this.get('asset')
       };
-      if ('showAddPieceForm') {
-        this.sendAction('action', artist, newPiece);
+      if (this.get('showAddPieceForm')) {
+        this.sendAction('onAddArtist', artist, newPiece);
       }
       else {
-        let newPiece = null;
-        this.sendAction('action', artist, newPiece);
+        this.sendAction('onAddArtist', artist);
       }
     }
   }
