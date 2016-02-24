@@ -1,8 +1,10 @@
-<h2>{{model.name}}</h2>
-<blockquote class='blockquote-reverse'>
-  <p>{{model.bio}}</p>
-   <footer>{{model.location}}</footer>
-</blockquote>
+<div class="panel panel-default">
+  <h2><div class="panel-heading">{{model.name}}</div></h2>
+  <blockquote class='blockquote'>
+    <h3>{{model.location}}</h3>
+    <p><em>{{model.bio}}</em></p>
+  </blockquote>
+  <div class="panel-body">
 <ul>
 {{#each model.pieces as |piece|}}
   <li><strong>{{piece.title}}</strong> {{piece.size}}</li>
@@ -13,7 +15,7 @@
   <li>{{piece.price}}</li>
 {{/each}}
 </ul>
+  </div>
+</div>
 
 {{manage-artist artist=model action="updateArtist" onNewPiece="addPiece"}}
-
-<!-- onNewPiece="newPiece" -->

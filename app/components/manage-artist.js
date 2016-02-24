@@ -13,7 +13,8 @@ export default Ember.Component.extend({
         subject: this.get('subject'),
         medium: this.get('medium'),
         size: this.get('size'),
-        price: this.get('price')
+        price: this.get('price'),
+        asset: this.get('asset')
       };
       if ('showAddPieceForm') {
         this.sendAction('action', artist, newPiece);
