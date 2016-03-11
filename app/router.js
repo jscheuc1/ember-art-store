@@ -18,6 +18,12 @@ Router.map(function() {
     this.route('new');
     this.route('exhibition', {path: "/:exhibition_id"});
   });
+  this.route('users', function() {
+    this.route('user', {path: '/:user_id' });
+    this.route('new');
+    this.route('me');
+  });
+  this.route('login');
 });
 
 export default Router;
